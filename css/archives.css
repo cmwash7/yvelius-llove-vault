@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f5f2; /* Light beige background */
+    color: #333; /* Dark text color for readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Archives Container */
+.archives-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Page Title */
+.archives-title {
+    font-size: 2.5rem;
+    color: #6a0dad; /* Purple theme */
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.archives-subtitle {
+    font-size: 1.2rem;
+    color: #b56576; /* Soft pink */
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item img,
+.grid-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0; /* Rounded corners for the top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.grid-item .caption {
+    padding: 10px;
+    font-size: 1rem;
+    color: #6a0dad; /* Purple text */
+    font-weight: bold;
+}
+
+/* Hover Effects */
+.grid-item:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.grid-item:hover .caption {
+    color: #542c85; /* Darker purple on hover */
+}
+
+/* Back to Gallery Button */
+.back-gallery {
+    margin-top: 30px;
+}
+
+.back-gallery-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6a0dad;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-gallery-btn:hover {
+    background-color: #542c85;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .archives-title {
+        font-size: 2rem;
+    }
+
+    .archives-subtitle {
+        font-size: 1rem;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns for mobile */
+        gap: 15px; /* Reduce spacing between items */
+    }
+
+    .grid-item img,
+    .grid-item video {
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .grid-item .caption {
+        font-size: 0.9rem; /* Slightly smaller text for captions */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+
+    .archives-title {
+        font-size: 1.8rem;
+    }
+
+    .archives-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .grid-item .caption {
+        font-size: 0.8rem; /* Smaller captions for very small screens */
+    }
+}

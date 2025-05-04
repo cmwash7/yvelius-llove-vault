@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Second Date</title>
+    <link rel="stylesheet" href="../css/timeline.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page Title -->
+        <h1 class="page-title">Our Second Date</h1>
+
+        <!-- Intro Section -->
+        <div class="intro">
+            <p>A day filled with laughter, a movie, and moments that made us even closer.</p>
+            <p>Some things don’t need to be planned too much—just being together is enough.</p>
+        </div>
+
+        <!-- Background Music -->
+        <audio id="background-music" autoplay>
+            <source src="../music/luther.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+
+        <!-- Slideshow Section -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="../images/IMG-20241202-WA0005.jpg" alt="Movie time">
+            </div>
+            <div class="slide fade">
+                <img src="../images/IMG-20241201-WA0003.jpg" alt="After the movie">
+            </div>
+            <div class="slide fade">
+                <img src="../images/IMG-20241201-WA0001.jpg" alt="Dinner together">
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Location Link -->
+        <div class="location">
+            <p>📍 <a href="https://maps.app.goo.gl/uuaAm2R7hTuXi3pEA" target="_blank">View our date location</a></p>
+        </div>
+
+        <!-- Outro Section -->
+        <div class="outro">
+            <p>
+                "I just wanted to tell you how much I enjoyed today<br>
+                and how I look forward to always spending such days with you.<br>
+                Thank you for everything and for always going out of your way to make me feel special and loved. ❤️<br>
+                I love you so much. Goodnight ❤️"
+            </p>
+        </div>
+
+        <!-- Back to Timeline Button -->
+        <a href="timeline.html" class="back-button">← Back to Timeline</a>
+    </div>
+
+    <!-- Slideshow Script -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Hide all slides
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; } // Loop back to the first slide
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", ""); // Remove "active" class from all dots
+            }
+            slides[slideIndex - 1].style.display = "block"; // Show the current slide
+            dots[slideIndex - 1].className += " active"; // Highlight the current dot
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+
+        // Stop music after 40 seconds
+        const music = document.getElementById("background-music");
+        setTimeout(() => {
+            music.pause();
+        }, 40000); // 40 seconds
+    </script>
+</body>
+</html>

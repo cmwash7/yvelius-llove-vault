@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start My Journey</title>
+    <link rel="stylesheet" href="../css/timeline.css"> <!-- Reuse the shared CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Start My Journey</h1>
+        
+        <!-- Intro Section -->
+        <div class="heartfelt-intro">
+            <p>
+                This journey hasn't always been easy, but through the highs and lows,  
+                one thing has remained true — the bond we share. Every step, every smile,  
+                and even the moments of silence have shaped this story.  
+            </p>
+        </div>
+
+        <!-- Automatic Slideshow -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+            <img src="../images/WhatsApp Image 2025-04-29 at 12.55.18_051a1fbb.jpg" alt="Photo 1 of our special moment">
+            </div>
+            <div class="slide fade">
+            <img src="../images/WhatsApp Image 2025-04-29 at 12.54.42_ec181d08.jpg" alt="Photo 2 of our special moment">
+            </div>
+        </div>
+
+        <!-- Slideshow Script -->
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+            }
+        </script>
+
+        <!-- Message Section -->
+        <div class="heartfelt-message">
+            <p>
+                Through every misunderstanding, every laugh, and every vulnerable moment,  
+                I've learned that what we have is rare. You mean the world to me, Yvonne.  
+                Here's to us — stronger, better, and always together.
+            </p>
+        </div>
+
+        <!-- Back to Timeline Button -->
+        <a href="timeline.html" class="back-button">← Back to Timeline</a>
+    </div>
+</body>
+</html>

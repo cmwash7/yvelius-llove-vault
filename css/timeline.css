@@ -1,0 +1,369 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f5f2;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.8rem;
+    color: #b56576;
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #b56576; /* Matches the pink theme */
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Timeline and Milestones */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.milestone {
+    background-color: #ffe4e1;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.milestone:hover {
+    background-color: #f8d7da;
+    transform: scale(1.05);
+}
+
+.milestone h2 {
+    margin: 0;
+    color: #6a3d3d;
+    font-size: 1.5rem;
+}
+
+/* Back-to-Top Button */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #b56576;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#back-to-top:hover {
+    background-color: #8a4a58;
+    transform: scale(1.1);
+}
+
+#back-to-top.show {
+    display: block;
+}
+
+/* Video Styling */
+.slideshow video {
+    width: 100%;
+    max-height: 500px;
+    border: 5px solid #a683e3;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(166, 131, 227, 0.8);
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Slideshow Images */
+.slide img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* Smooth Fade Transition for Slideshow */
+.slide {
+    animation: fadeEffect 1s ease-in-out; /* Smooth fade animation */
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Navigation Dots */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #b56576; /* Matches the pink theme */
+}
+
+.dot:hover {
+    background-color: #8a4a58; /* Slightly darker pink on hover */
+}
+
+/* Date Section */
+.date-section {
+    text-align: center;
+    background-color: #fff3e0;
+    color: #ff7043;
+    padding: 10px 0;
+    margin: 20px 0;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heartfelt Intro and Message Styling */
+.heartfelt-intro, .heartfelt-message {
+    background-color: #ffe4e1;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6a3d3d;
+    line-height: 1.6;
+}
+
+.heartfelt-intro:hover, .heartfelt-message:hover {
+    background-color: #f8d7da;
+    transform: scale(1.02);
+}
+
+/* Intro and Outro Sections */
+.intro {
+    background-color: #ffe4e1; /* Soft pink background */
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #b56576; /* Pink text color */
+    line-height: 1.6;
+}
+
+.outro {
+    background-color: #ffe4e1; /* Soft pink background */
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #b56576; /* Pink text color */
+    line-height: 1.6;
+    border-radius: 12px; /* Rounded corners */
+    font-style: italic;
+
+    /* Fade-in Animation */
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Gallery Section */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #ffdde1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Back to Timeline Button */
+.back-button {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #6a0dad;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+    background-color: #4a0072;
+    transform: scale(1.05);
+}
+
+/* Fade-in Effect for Slideshow */
+.fade {
+    animation: fadeEffect 1s ease-in-out; /* Smooth fade animation */
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Audio Player */
+audio {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Location Section */
+.location {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.location a {
+    color: #6a0dad;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.location a:hover {
+    color: #542c85;
+    text-decoration: underline;
+}
+
+/* Slideshow */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #ffdde1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dots-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: #6a0dad;
+}
+
+.dot:hover {
+    background-color: #542c85;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .slide img {
+        max-width: 90%;
+    }
+
+    .heartfelt-intro, .heartfelt-message {
+        font-size: 1rem;
+    }
+
+    .date-section {
+        font-size: 0.9rem;
+    }
+
+    .intro, .outro {
+        font-size: 1rem;
+    }
+
+    .gallery img {
+        border-radius: 8px;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

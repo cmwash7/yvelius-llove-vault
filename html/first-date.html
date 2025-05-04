@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our First Date</title>
+    <link rel="stylesheet" href="../css/timeline.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page Title -->
+        <h1 class="page-title">Our First Date</h1>
+
+        <!-- Intro Section -->
+        <div class="intro">
+            <p>Sometimes, the simplest moments mean the most...</p>
+            <p>Just us, walking, laughing, and holding on to memories made in unexpected places.</p>
+        </div>
+
+        <!-- Slideshow Section -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="../images/IMG-20240623-WA0001.jpg" alt="Holding hands">
+            </div>
+            <div class="slide fade">
+                <img src="../images/IMG-20241019-WA0107.jpg" alt="Bracelet photo">
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+
+        <!-- Outro Section -->
+        <div class="outro">
+            <p>
+                "I had the greatest time today ❤<br>
+                With you, every day is a good day,<br>
+                and anywhere is a good place."
+            </p>
+        </div>
+
+        <!-- Back to Timeline Button -->
+        <a href="timeline.html" class="back-button">← Back to Timeline</a>
+    </div>
+
+    <!-- Slideshow Script -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Hide all slides
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; } // Loop back to the first slide
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", ""); // Remove "active" class from all dots
+            }
+            slides[slideIndex - 1].style.display = "block"; // Show the current slide
+            dots[slideIndex - 1].className += " active"; // Highlight the current dot
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+    </script>
+</body>
+</html>

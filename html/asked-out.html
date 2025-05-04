@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When I Asked Her Out</title>
+    <link rel="stylesheet" href="../css/timeline.css"> <!-- Reuse the shared CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>When I Asked Her Out</h1>
+
+        <!-- Heartfelt Intro -->
+        <div class="heartfelt-intro">
+            <p>
+                There are moments in life where you take a leap of faith,  
+                hoping that the person in front of you feels the same way.  
+                This was that moment — nerves racing, heart pounding... but you were worth every second of it.
+            </p>
+        </div>
+
+        <!-- Automatic Slideshow -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="../images/IMG-20240929-WA0062.jpg" alt="Photo 1 of our special moment">
+            </div>
+            <div class="slide fade">
+                <img src="../images/IMG-20240929-WA0059.jpg" alt="Photo 2 of our special moment">
+            </div>
+            <div class="slide fade">
+                <img src="../images/IMG-20240929-WA0065.jpg" alt="Photo 3 of our special moment">
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Date Section -->
+        <div class="date-section">
+            <p>📅 <strong>29th September 2024</strong> — A day I'll always remember.</p>
+        </div>
+
+        <!-- Heartfelt Message -->
+        <div class="heartfelt-message">
+            <p>
+                I still remember how nervous I was — the overthinking, the endless  
+                “What ifs,” and that tiny voice telling me to just go for it.  
+                You smiled... and suddenly everything made sense. That moment changed everything,  
+                and I'm grateful every day that you said yes.  
+            </p>
+        </div>
+
+        <!-- Back to Timeline Button -->
+        <a href="timeline.html" class="back-button">← Back to Timeline</a>
+    </div>
+
+    <!-- Slideshow Script -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1; // Adjust index for zero-based array
+            showSlides();
+        }
+    </script>
+</body>
+</html>
